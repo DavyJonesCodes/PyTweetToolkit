@@ -18,7 +18,7 @@ PyTweetToolkit can be installed using multiple methods. Choose the one that suit
 This is the easiest way to get PyTweetToolkit up and running. Use pip for installation:
 
 ```bash
-pip install pytweet-toolkit
+pip install PyTweetToolkit
 ```
 
 For more details, visit [PyTweetToolkit on PyPI](https://pypi.org/project/pytweet-toolkit/).

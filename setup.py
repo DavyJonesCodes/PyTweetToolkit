@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pytweet-toolkit",
+    name="PyTweetToolkit",
     version="1.0.0",
     author='Dev Jones',
     author_email='yashdhankhar5656@gmail.com',
