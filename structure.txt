@@ -1,0 +1,25 @@
+pytweetapi/
+│
+├───api/
+│   ├───auth.py
+│   ├───bookmark.py
+│   ├───friendship.py
+│   ├───interaction.py
+│   ├───notification.py
+│   ├───profile.py
+│   ├───restrictions.py
+│   ├───search.py
+│   ├───tweet.py
+│   ├───upload.py
+│   └───user.py
+│
+├───models/
+│   ├───list_model.py
+│   ├───notification_model.py
+│   ├───tweet_model.py
+│   └───user_model.py
+│
+├───utils/
+│   └───request_handler.py
+│
+└───main.py
