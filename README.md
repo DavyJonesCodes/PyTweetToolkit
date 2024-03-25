@@ -96,7 +96,7 @@ client.follow("python_community")
 
 ## Documentation
 
-For detailed documentation, including setup guides, examples, and API references, please visit our [documentation page](https://github.com/DavyJonesCodes/PyTweetToolkit/wiki).
+For detailed documentation, including setup guides, examples, and API references, please visit our [documentation page](https://github.com/DavyJonesCodes/PyTweetToolkit/wiki/1.-Home).
 
 ## Contributing
 
