@@ -94,6 +94,10 @@ client.post_tweet("Hello, world! #MyFirstTweet")
 client.follow("python_community")
 ```
 
+## Documentation
+
+For detailed documentation, including setup guides, examples, and API references, please visit our [documentation page](https://github.com/DavyJonesCodes/PyTweetToolkit/wiki).
+
 ## Contributing
 
 We welcome contributions to PyTweetToolkit! If you'd like to contribute, please fork the repository and use a pull request to add your changes. For more detailed information, check out our CONTRIBUTING.md.
