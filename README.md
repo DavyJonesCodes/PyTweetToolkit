@@ -4,10 +4,10 @@ PyTweetToolkit is an intuitive Python library designed to simplify Twitter inter
 
 ## Features
 
-- **Tweet Posting**: Easily create and post tweets directly from your Python scripts.
-- **User Engagement**: Automate following, unfollowing, blocking, and muting operations.
-- **Analytics**: Analyze tweet performance, follower growth, and engagement metrics.
-- **Content Automation**: Schedule tweets and manage your content strategy programmatically.
+-   **Tweet Posting**: Easily create and post tweets directly from your Python scripts.
+-   **User Engagement**: Automate following, unfollowing, blocking, and muting operations.
+-   **Analytics**: Analyze tweet performance, follower growth, and engagement metrics.
+-   **Content Automation**: Schedule tweets and manage your content strategy programmatically.
 
 ## Installation
 
@@ -56,6 +56,26 @@ python3 --version
 ```
 
 If you need to install a newer version of Python, visit the [official Python website](https://www.python.org/downloads/) for download links and installation instructions.
+
+## Obtaining Authentication Cookies
+
+To use PyTweetToolkit, you'll need to obtain authentication cookies from Twitter's website using your browser's developer tools. Follow these steps to retrieve the required cookies:
+
+1. **Login to Twitter**: Log in to your Twitter account in your web browser.
+
+2. **Open Developer Tools**: Once logged in, open the developer tools in your web browser. You can usually access this by right-clicking on the page and selecting "Inspect".
+
+3. **Navigate to Application Tab**: In the developer tools, navigate to the "Application" or "Storage" tab. This tab contains information about cookies, local storage, and session storage.
+
+4. **Find Twitter Cookies**: Look for the section that displays cookies. Find the cookies associated with the Twitter website (`https://twitter.com`). These cookies typically include `auth_token` and `ct0`, among others.
+
+5. **Locating Cookie Values**: Locate the cookies associated with the Twitter website (`https://twitter.com`). Look for cookies named `auth_token` and `ct0`.
+
+6. **Extract Cookie Values**: Double-click on the value of the `auth_token` cookie to copy it. Similarly, double-click on the value of the `ct0` cookie to copy it as well.
+
+7. **Use Cookie Values as Tokens**: In your Python script or application, replace `YOUR_AUTH_TOKEN` with the value copied from the `auth_token` cookie and `YOUR_CSRF_TOKEN` with the value copied from the `ct0` cookie. These values will serve as your authentication token (`auth_token`) and Cross-Site Request Forgery (CSRF) token (`csrf_token`), respectively.
+
+For detailed instructions on how to use PyTweetToolkit, refer to the [Quick Start](#quick-start) section below.
 
 ## Quick Start
 
