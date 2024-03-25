@@ -4,10 +4,10 @@ PyTweetToolkit is an intuitive Python library designed to simplify Twitter inter
 
 ## Features
 
--   **Tweet Posting**: Easily create and post tweets directly from your Python scripts.
--   **User Engagement**: Automate following, unfollowing, blocking, and muting operations.
--   **Analytics**: Analyze tweet performance, follower growth, and engagement metrics.
--   **Content Automation**: Schedule tweets and manage your content strategy programmatically.
+- **Tweet Posting**: Easily create and post tweets directly from your Python scripts.
+- **User Engagement**: Automate following, unfollowing, blocking, and muting operations.
+- **Analytics**: Analyze tweet performance, follower growth, and engagement metrics.
+- **Content Automation**: Schedule tweets and manage your content strategy programmatically.
 
 ## Installation
 
@@ -62,7 +62,7 @@ If you need to install a newer version of Python, visit the [official Python web
 Here's a quick example to get you started with PyTweetToolkit:
 
 ```python
-from pytweet-toolkit import PyTweetClient
+from PyTweetToolkit import PyTweetClient
 
 # Initialize the client with your credentials
 client = PyTweetClient(auth_token="YOUR_AUTH_TOKEN", csrf_token="YOUR_CSRF_TOKEN")
