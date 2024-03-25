@@ -1,5 +1,5 @@
-from api import auth
-from models import tweet_model, user_model, list_model
+from . import auth
+from ..models import tweet_model, user_model, list_model
 
 
 class SearchActions(auth.Auth):
@@ -22,17 +22,16 @@ class SearchActions(auth.Auth):
         search_lists(query, cursor): Searches for lists related to the query.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes SearchActions with authentication tokens.
 
         Parameters:
             auth_token (str): Session authentication token.
             csrf_token (str): Token for CSRF protection.
-            bearer_token (str): API authorization token.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
 
     def search_top(self, query: str, cursor: str = "") -> tuple[list[user_model.User], list[tweet_model.Tweet], str, str]:
         """

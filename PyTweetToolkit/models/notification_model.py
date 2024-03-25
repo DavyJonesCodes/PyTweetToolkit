@@ -1,4 +1,4 @@
-from models import tweet_model
+from . import tweet_model
 
 
 class Notification:

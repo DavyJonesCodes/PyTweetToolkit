@@ -1,4 +1,4 @@
-from models import user_model
+from . import user_model
 
 
 class Tweet:

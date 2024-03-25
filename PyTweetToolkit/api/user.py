@@ -1,5 +1,5 @@
-from api import auth, tweet
-from models import user_model, tweet_model
+from . import auth, tweet
+from ..models import user_model, tweet_model
 
 
 class UserActions(auth.Auth):
@@ -39,18 +39,17 @@ class UserActions(auth.Auth):
             Retrieves tweets retweeted by a specified user. Subject to Twitter's standard API rate limits.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes UserActions with authentication tokens required for making API requests.
 
         Parameters:
             auth_token (str): The authentication token for session management.
             csrf_token (str): The CSRF token for securing requests against CSRF attacks.
-            bearer_token (str): The bearer token for authorization in API requests.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token)
 
     def get_user_by_screen_name(self, screen_name: str) -> user_model.User:
         """

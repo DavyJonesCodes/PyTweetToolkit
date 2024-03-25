@@ -1,5 +1,5 @@
-from api import auth, user
-from models import user_model
+from . import auth, user
+from ..models import user_model
 
 
 class RestrictionActions(auth.Auth):
@@ -39,18 +39,17 @@ class RestrictionActions(auth.Auth):
             Retrieves a list of users muted by the authenticated user along with pagination cursors.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes RestrictionActions with the necessary authentication tokens.
 
         Parameters:
             auth_token (str): Token for user session authentication.
             csrf_token (str): Token for CSRF protection.
-            bearer_token (str): Token for API authorization.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.user_actions = user.UserActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.user_actions = user.UserActions(auth_token, csrf_token)
 
     def block_user(self, user_id: str) -> user_model.User:
         """

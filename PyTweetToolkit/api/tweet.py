@@ -1,5 +1,5 @@
-from api import auth
-from models import tweet_model
+from . import auth
+from ..models import tweet_model
 
 
 class TweetActions(auth.Auth):
@@ -44,17 +44,16 @@ class TweetActions(auth.Auth):
             Deletes a specified tweet. Subject to Twitter's standard API rate limits.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes TweetActions with authentication tokens.
 
         Parameters:
             auth_token (str): Token for session authentication.
             csrf_token (str): Token for CSRF protection.
-            bearer_token (str): Token for API authorization.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
 
     def get_user_tweets(self, user_id: str, cursor: str = "", is_reply=False, is_retweet=False) -> tuple[list[tweet_model.Tweet], str, str]:
         """

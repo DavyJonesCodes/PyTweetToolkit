@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from api import auth, upload, user, tweet
-from models import notification_model, tweet_model
+from . import auth, upload, user, tweet
+from ..models import notification_model, tweet_model
 
 
 class NotificationActions(auth.Auth):
@@ -33,20 +33,19 @@ class NotificationActions(auth.Auth):
             Rate limit: 180 actions per 15 minutes.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes NotificationActions with necessary authentication tokens for making API requests.
 
         Parameters:
             auth_token (str): Authentication token for session management.
             csrf_token (str): CSRF token for securing requests.
-            bearer_token (str): Bearer token for API authorization.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.user_actions = user.UserActions(auth_token, csrf_token, bearer_token)
-        self.upload_actions = upload.UploadActions(auth_token, csrf_token, bearer_token)
-        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.user_actions = user.UserActions(auth_token, csrf_token)
+        self.upload_actions = upload.UploadActions(auth_token, csrf_token)
+        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token)
         self.params = {
             'include_profile_interstitial_type': '1',
             'include_blocking': '1',

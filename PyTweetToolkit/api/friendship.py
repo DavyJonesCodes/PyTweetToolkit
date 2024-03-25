@@ -1,5 +1,5 @@
-from api import auth, user
-from models import user_model
+from . import auth, user
+from ..models import user_model
 
 
 class FriendshipActions(auth.Auth):
@@ -35,18 +35,17 @@ class FriendshipActions(auth.Auth):
             Rate limit: Subject to Twitter's standard API rate limits.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes the FriendshipActions instance with necessary authentication tokens for making API requests.
 
         Parameters:
             auth_token (str): The authentication token for session management.
             csrf_token (str): The CSRF token for securing requests against CSRF attacks.
-            bearer_token (str): The bearer token for authorization in API requests.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.user_actions = user.UserActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.user_actions = user.UserActions(auth_token, csrf_token)
 
     def follow_user(self, user_id: str) -> user_model.User:
         """

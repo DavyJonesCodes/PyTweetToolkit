@@ -1,4 +1,4 @@
-from api import bookmark, friendship, interaction, notification, profile, restrictions, search, tweet, upload, user
+from .api import bookmark, friendship, interaction, notification, profile, restrictions, search, tweet, upload, user
 
 
 class PyTweetClient(bookmark.BookmarkActions,
@@ -6,7 +6,7 @@ class PyTweetClient(bookmark.BookmarkActions,
                     interaction.InteractionActions,
                     notification.NotificationActions,
                     profile.ProfileActions,
-                    restrictions.BlockActions,
+                    restrictions.RestrictionActions,
                     search.SearchActions,
                     tweet.TweetActions,
                     upload.UploadActions,
@@ -22,7 +22,6 @@ class PyTweetClient(bookmark.BookmarkActions,
     Attributes:
         auth_token (str): The authentication token for API requests.
         csrf_token (str): The CSRF token for authentication.
-        bearer_token (str): The bearer token for authorization.
 
     Methods:
         All methods inherited from action classes such as BookmarkActions, FriendshipActions, etc.
@@ -40,13 +39,12 @@ class PyTweetClient(bookmark.BookmarkActions,
         - user.UserActions: Performs user-related actions like fetching user profiles and followers.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes the PyTweetClient with the provided authentication tokens.
 
         Args:
             auth_token (str): The authentication token for API requests.
             csrf_token (str): The CSRF token for authentication.
-            bearer_token (str): The bearer token for authorization.
         """
-        super().__init__(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)

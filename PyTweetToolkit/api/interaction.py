@@ -1,5 +1,5 @@
-from api import auth, tweet
-from models import tweet_model
+from . import auth, tweet
+from ..models import tweet_model
 
 
 class InteractionActions(auth.Auth):
@@ -36,18 +36,17 @@ class InteractionActions(auth.Auth):
             Creates a reply to a tweet, optionally with content and media. Returns the reply tweet details. Rate limit: Subject to Twitter's standard API rate limits.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes InteractionActions with necessary authentication tokens for making API requests.
 
         Parameters:
             auth_token (str): Authentication token for session management.
             csrf_token (str): CSRF token for request security.
-            bearer_token (str): Bearer token for API authorization.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token)
 
     def like_tweet(self, tweet_id: str) -> str:
         """

@@ -1,7 +1,8 @@
-from api import auth, upload, user
-from models import user_model
 import os
 from PIL import Image
+
+from . import auth, upload, user
+from ..models import user_model
 
 
 class ProfileActions(auth.Auth):
@@ -35,19 +36,18 @@ class ProfileActions(auth.Auth):
             Validates the provided image against Twitter's image requirements. Checks for file existence, size, format, dimensions, and aspect ratio.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes ProfileActions with authentication tokens.
 
         Parameters:
             auth_token (str): Token for session authentication.
             csrf_token (str): Token for CSRF protection.
-            bearer_token (str): Token for API authorization.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.user_actions = user.UserActions(auth_token, csrf_token, bearer_token)
-        self.upload_actions = upload.UploadActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.user_actions = user.UserActions(auth_token, csrf_token)
+        self.upload_actions = upload.UploadActions(auth_token, csrf_token)
 
     def update_profile(self, name: str = None, description: str = None, location: str = None, website_url: str = None) -> user_model.User:
         """

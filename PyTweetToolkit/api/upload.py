@@ -1,7 +1,8 @@
-from api import auth
 import os
 import time
 import mimetypes
+
+from . import auth
 
 
 class UploadActions(auth.Auth):
@@ -24,17 +25,16 @@ class UploadActions(auth.Auth):
         _check_status(): Checks the status of media processing after upload.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes the UploadActions instance with authentication tokens.
 
         Parameters:
             auth_token (str): The authentication token for user session.
             csrf_token (str): The CSRF token for request protection.
-            bearer_token (str): The bearer token for API authorization.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
         self.media_endpoint_url = 'https://upload.twitter.com/i/media/upload.json'
 
     def upload(self, source: str, media_category: str = None) -> str:

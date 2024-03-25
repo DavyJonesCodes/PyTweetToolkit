@@ -1,5 +1,5 @@
-from api import auth, tweet
-from models import tweet_model
+from . import auth, tweet
+from ..models import tweet_model
 
 
 class BookmarkActions(auth.Auth):
@@ -28,18 +28,17 @@ class BookmarkActions(auth.Auth):
             Retrieves a list of bookmarked tweets with pagination cursors. Rate limit: 500 actions per 15 minutes.
     """
 
-    def __init__(self, auth_token: str, csrf_token: str, bearer_token: str) -> None:
+    def __init__(self, auth_token: str, csrf_token: str) -> None:
         """
         Initializes the BookmarkActions instance with authentication tokens necessary for making API requests.
 
         Parameters:
             auth_token (str): The authentication token for session management.
             csrf_token (str): The CSRF token for securing requests against CSRF attacks.
-            bearer_token (str): The bearer token for authorization in API requests.
         """
 
-        super().__init__(auth_token, csrf_token, bearer_token)
-        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token, bearer_token)
+        super().__init__(auth_token, csrf_token)
+        self.tweet_actions = tweet.TweetActions(auth_token, csrf_token)
 
     def bookmark_tweet(self, tweet_id: str) -> tweet_model.Tweet:
         """
