@@ -1,5 +1,15 @@
 # Security Policy
 
+## Supported Versions
+
+We are committed to maintaining the security of PyTweetToolkit. Currently, the following version is being actively supported with security updates:
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.0.0   | :white_check_mark: |
+
+Please ensure you are using this version to benefit from the latest security patches and updates.
+
 ## Reporting a Security Vulnerability
 
 We take the security of PyTweetToolkit seriously. If you discover a security vulnerability within the project, please help us by reporting it to us in a responsible manner.
