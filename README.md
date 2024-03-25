@@ -21,7 +21,7 @@ This is the easiest way to get PyTweetToolkit up and running. Use pip for instal
 pip install PyTweetToolkit
 ```
 
-For more details, visit [PyTweetToolkit on PyPI](https://pypi.org/project/pytweet-toolkit/).
+For more details, visit [PyTweetToolkit on PyPI](https://pypi.org/project/PyTweetToolkit/).
 
 ### Install the latest development version
 
