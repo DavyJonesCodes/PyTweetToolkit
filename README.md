@@ -62,7 +62,7 @@ Here's a quick example to get you started with PyTweetToolkit:
 ```python
 from pytweet-toolkit import PyTweetClient
 
-# Initialize the client with your API credentials
+# Initialize the client with your credentials
 client = PyTweetClient(auth_token="YOUR_AUTH_TOKEN", csrf_token="YOUR_CSRF_TOKEN", bearer_token="YOUR_BEARER_TOKEN")
 
 # Post a tweet
