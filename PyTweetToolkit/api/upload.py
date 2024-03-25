@@ -50,7 +50,7 @@ class UploadActions(auth.Auth):
         Rate limit: 615 requests per 15-minute window.
 
         Parameters:
-            source (str): The local file path or URL of the media to upload.
+            source (str): The local file path or URL of the gif to upload.
             media_category (str, optional): The category of the media being uploaded. Accepts one of: "tweet_image", "tweet_video", "tweet_gif", "dm_image", "dm_video", "dm_gif", or None.
 
         Returns:
