@@ -16,7 +16,7 @@ We take the security of PyTweetToolkit seriously. If you discover a security vul
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Instead, please send an email to [yashdhankhar5656@gmail.com](mailto:yashdhankhar5656@gmail.com) with the details of the vulnerability. We appreciate your effort to responsibly disclose your findings and will make every effort to acknowledge your emailed report within 48 hours.
+Instead, please send an email to [yashdhankhar5656@gmail.com](mailto:devjonescodes@gmail.com) with the details of the vulnerability. We appreciate your effort to responsibly disclose your findings and will make every effort to acknowledge your emailed report within 48 hours.
 
 ### What to include in your report:
 
