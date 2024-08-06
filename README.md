@@ -7,6 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
   <img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white"/>
+  <img src="https://img.shields.io/github/license/DavyJonesCodes/PyTweetToolkit?style=for-the-badge"/>
 </p>
 
 PyTweetToolkit is an intuitive Python library designed to simplify Twitter interactions, offering tools for posting tweets, engaging with followers, analyzing social media metrics, and automating various Twitter-related tasks. Ideal for developers looking to integrate Twitter functionality into Python projects or automate their social media presence with ease.
