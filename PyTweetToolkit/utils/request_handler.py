@@ -101,7 +101,7 @@ class RequestHandler:
                 reset_time = response.headers.get('x-rate-limit-reset')
                 if reset_time:
                     reset_time = datetime.datetime.fromtimestamp(int(reset_time), datetime.UTC) 
-                    current_time = datetime.datetime.fromtimestamp(time.time())
+                    current_time = datetime.datetime.fromtimestamp(time.time(), datetime.UTC)
                     wait_seconds = (reset_time - current_time).total_seconds() + 1
                     raise RuntimeError(f"429 Too Many Requests | Rate limit exceeded. Retry after {wait_seconds} seconds | Message: {error_msg}".strip())
                 else:
