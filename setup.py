@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name="PyTweetToolkit",
-    version="1.0.1",
+    version="1.0.2",
     author='Dev Jones',
     author_email='yashdhankhar5656@gmail.com',
     description='PyTweetToolkit: An intuitive Python library for managing Twitter interactions, providing tools for posting tweets, engaging with users, and analyzing social media metrics. Perfect for automating tasks and integrating Twitter functionality into Python projects.',  # Short project description
